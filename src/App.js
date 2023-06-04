@@ -23,13 +23,15 @@ function App() {
           progress={progress}
           onLoaderFinished={() => setProgress(0)}
         />
-        <Navbar setProgress={setProgress} activeTab="active" />
+        <Navbar setProgress={setProgress} />
         <Routes >
           <Route exact path="/" element={<Home setProgress={setProgress} />} />
           <Route exact path="/signup" element={<Signup setProgress={setProgress} />} />
           <Route exact path="/login" element={<Login setProgress={setProgress} />} />
           <Route exact path="/about" element={<About />} />
+
           <Route exact path="/encrydecry" element={<Encrydecry />} />
+
           <Route exact path="/checkprime" element={<Prime />} />
         </Routes>
         <Footer />

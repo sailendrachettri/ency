@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const Users = require('../models/Users')
 const { body, validationResult } = require('express-validator')
 const fetchuser = require('../middleware/fetchuser')
+const { json } = require('react-router-dom')
 
 const JWT_SECRET = "thisIsASecretKey"
 
@@ -51,7 +52,7 @@ router.post('/signup', [
         const authtoken = jwt.sign(data, JWT_SECRET)
 
         success = true
-        res.json({ success, authtoken })
+        res.json({ success, authtoken, user })
     }
     catch (error) {
         console.log(error.message);
@@ -111,11 +112,11 @@ router.post('/getuser', fetchuser, async (req, res) => {
         const user = await Users.findById(userId).select("-passowrd")
         res.send(user)
 
+
     } catch (error) {
         console.log(error.message)
         res.status(500).send("Something went wrong!")
     }
-
 })
 
 module.exports = router

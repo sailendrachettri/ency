@@ -30,12 +30,14 @@ function Login(props) {
             body: JSON.stringify({ email: credendials.email, password: credendials.password })
         })
         const json = await response.json()
-        console.log(json.name);
 
         if (json.success) {
             // save the auth token and redirect
             localStorage.setItem('token', json.authtoken)
             navigate("/encrydecry")
+
+            const displayUser = document.getElementById('displayUser');
+            displayUser.innerHTML = credendials.email
 
         }
         else

@@ -18,6 +18,7 @@ function Signup(props) {
     }
 
     const validateAndSignup = async (e) => {
+        props.setProgress(50)
         e.preventDefault()
 
         // user validation
@@ -31,14 +32,19 @@ function Signup(props) {
             body: JSON.stringify({ name, email, password, phone })
         })
         const json = await response.json()
-        console.log(json);
+
 
         if (json.success) {
+            props.setProgress(100)
             // save the auth token and redirect
             localStorage.setItem('token', json.authtoken)
             navigate("/encrydecry")
+
+            const displayUser = document.getElementById('displayUser');
+            displayUser.innerHTML = name
         }
         else {
+            props.setProgress(100)
             alert("Invalid details")
         }
     }
@@ -70,7 +76,7 @@ function Signup(props) {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="phone" className="form-label">Phone Number</label>
-                            <input type="number" className="form-control" id="phone" name='phone' onChange={onChangeMethod} placeholder="eg: 9832XXX894" />
+                            <input type="number" className="form-control" id="phone" name='phone' onChange={onChangeMethod} placeholder="eg: 9832XXX894" required />
                         </div>
                         <div className="d-grid gap-2 col-4 mx-auto">
                             <button className="btn btn-sm btn-outline-primary" type="submit">Regestered</button>

@@ -19,8 +19,8 @@ function Login(props) {
     }
 
     const validateAndLoggedInUser = async (e) => {
+        props.setProgress(50);
         e.preventDefault()
-
         // user validation
         const response = await fetch("http://localhost:5000/v1/auth/login", {
             method: 'POST',
@@ -32,6 +32,7 @@ function Login(props) {
         const json = await response.json()
 
         if (json.success) {
+            props.setProgress(100);
             // save the auth token and redirect
             localStorage.setItem('token', json.authtoken)
             navigate("/encrydecry")
@@ -40,8 +41,10 @@ function Login(props) {
             displayUser.innerHTML = credendials.email
 
         }
-        else
+        else {
+            props.setProgress(100);
             alert("Invalid credendials")
+        }
     }
 
     const onChangeMethod = (e) => {

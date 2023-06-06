@@ -23,22 +23,22 @@ function Navbar(props) {
         }, 500);
     }
     const goToEncyDency = () => {
-        // // top loading bar progress
-        // props.setProgress(50);
-        // setTimeout(() => {
-        //     props.setProgress(100);
-        //     navigate("/encrydecry");
-        // }, 500);
 
-        if (localStorage.getItem('token')) {
-            navigate('/encrydecry')
-        }
-        else {
-            navigate('/login')
-        }
-
+        // top loading bar progress
+        props.setProgress(50);
+        setTimeout(() => {
+            if (localStorage.getItem('token')) {
+                props.setProgress(100);
+                navigate('/encrydecry')
+            }
+            else {
+                props.setProgress(100);
+                navigate('/login')
+            }
+        }, 500);
 
     }
+
     const goToAbout = () => {
         // top loading bar progress
         props.setProgress(50);
@@ -49,6 +49,9 @@ function Navbar(props) {
     }
 
     const logoutMethod = () => {
+        const displayUser = document.getElementById('displayUser')
+        displayUser.innerText = "Encryasmi"
+
         localStorage.removeItem('token')
         navigate('/login')
     }

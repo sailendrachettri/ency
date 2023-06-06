@@ -7,7 +7,7 @@ export default function App() {
         <>
             <footer className="font-small blue mt-3 bg-light">
                 <div className="text-center py-4">© {year} Copyright |
-                    <Link to="/" style={{ textDecoration: "none" }}> Sailendra Chettri</Link>
+                    <Link to="/about" style={{ textDecoration: "none" }}> Sailendra Chettri</Link>
                 </div>
             </footer>
 

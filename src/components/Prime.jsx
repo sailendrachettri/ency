@@ -41,8 +41,8 @@ function Prime() {
                     <div className="container">
                         <h3 className='mt-4 headerText2'>Prime number</h3>
                         <div className='mt-2 mb-5'>
-                            <p>   A prime number is a whole number greater than 1 whose only factors are 1 and itself. A factor is a whole number that can be divided evenly into another number. </p>
-                            <p> The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23 and 29. </p>
+                            <p>   A prime number is a whole number greater than 1 whose only factors are <strong> 1 and itself</strong>. A factor is a whole number that can be divided evenly into another number. </p>
+                            <p> The first few prime numbers are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 etc. </p>
                         </div>
                     </div>
                 </div>

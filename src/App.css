@@ -33,6 +33,11 @@ body {
     font-weight: 700;
 }
 
+#displayUser {
+    color: #1470fd;
+    font-weight: 500;
+}
+
 .containerHeight75vh {
     min-height: 75vh;
 }

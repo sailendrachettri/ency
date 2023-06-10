@@ -49,8 +49,8 @@ function Navbar(props) {
     }
 
     const logoutMethod = () => {
-        const displayUser = document.getElementById('displayUser')
-        displayUser.innerText = "Encryasmi"
+        let displayUser = document.getElementById('displayUser');
+        displayUser.innerHTML = ""
 
         localStorage.removeItem('token')
         navigate('/login')
@@ -60,7 +60,7 @@ function Navbar(props) {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <p className="navbar-brand logo" role='button' > <span onClick={goToHome} id='displayUser'> Encryasmi</span></p>
+                    <p className="navbar-brand logo" role='button' > <span onClick={goToHome} > Encryasmi</span></p>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -76,6 +76,8 @@ function Navbar(props) {
                                 <p className={`nav-link ${window.location.pathname === "/about" ? "active" : ""}`} role='button' onClick={goToAbout}>Developer</p>
                             </li>
                         </ul>
+
+                        <span className='mt-2 mx-3' id='displayUser'> </span>
                         {/* ! "not login" ? "than show login/signup : "else show logout and username" */}
                         {!localStorage.getItem('token') ? <form className="d-flex">
                             <Link to="/login" className='btn btn-outline-primary mx-1' role='button'>Login</Link>
@@ -84,7 +86,7 @@ function Navbar(props) {
                         </form> : <button className='btn btn-outline-primary mx-1' onClick={logoutMethod}>Logout</button>}
                     </div>
                 </div>
-            </nav>
+            </nav >
         </>
     )
 }

@@ -41,7 +41,7 @@ function Signup(props) {
             navigate("/encrydecry")
 
             const displayUser = document.getElementById('displayUser');
-            displayUser.innerHTML = name
+            displayUser.innerHTML = "Welcome " + name.split(" ")[0]
         }
         else {
             props.setProgress(100)

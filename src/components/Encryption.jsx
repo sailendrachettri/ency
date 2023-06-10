@@ -13,11 +13,16 @@ function Encryption() {
     const methodOnChange = (event) => {
         setText(event.target.value);
     }
+    const onChangePhone = (event) => {
+        setPhonenumber(event.target.value);
+    }
 
     const clearTextarea = () => {
         setText("");
         setEncryptText("");
         setMessage(" ");
+        setSecretText("");
+        setPhonenumber("");
     }
 
     const sendMessage = () => {
@@ -43,7 +48,7 @@ function Encryption() {
         let getCharNumber = []; // to store ASCAII value of each char
 
         let secretKeyLength = secrettext.length;
-        if(secretKeyLength === 0)
+        if (secretKeyLength === 0)
             secretKeyLength = 2;
 
         for (let i = 0; i < text.length; i++) {
@@ -54,7 +59,7 @@ function Encryption() {
         // converting back in char and pusing it into str variable
         for (let i = 0; i < getCharNumber.length; i++) {
             // this is for space - origin value of space 32 but we added + secretKey value so 32+secretKey
-            if (getCharNumber[i] === 32+secretKeyLength) {
+            if (getCharNumber[i] === 32 + secretKeyLength) {
                 str += String.fromCharCode(32); // if 2+secretKey add 32 for space
             }
             else
@@ -86,18 +91,18 @@ function Encryption() {
     }
 
     // private Key Input
-    const secretOnChange = (e)=>{
+    const secretOnChange = (e) => {
         setSecretText(e.target.value);
     }
 
-    const showPrivateKeyInput = ()=>{        
+    const showPrivateKeyInput = () => {
         const secretKey = document.getElementById("privateKeyInputField");
         setSecretText(secretKey.value);
 
-        if(secretKey.style.display === 'none')
-        secretKey.style.display = 'block';
+        if (secretKey.style.display === 'none')
+            secretKey.style.display = 'block';
         else
-        secretKey.style.display = 'none';
+            secretKey.style.display = 'none';
     }
 
     return (
@@ -123,7 +128,7 @@ function Encryption() {
                                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Secret key</label>
                                 </div>
                                 <div>
-                                    <input onChange={secretOnChange} value={secrettext} className="form-control" id="privateKeyInputField" style={{display:"none"}} type="text" placeholder="eg: codzz" />
+                                    <input onChange={secretOnChange} value={secrettext} className="form-control" id="privateKeyInputField" style={{ display: "none" }} type="text" placeholder="eg: codzz" />
                                 </div>
                             </div>
 
@@ -142,7 +147,7 @@ function Encryption() {
                             <div className="d-flex align-items-center justify-content-center mt-4">
                                 {/* <button type="button" className="btn btn-outline-primary" onClick={copyText}>Copy text</button> */}
                                 <div className="col-auto mx-2">
-                                    <input type="number" className="form-control boxBgColor" style={{ borderRadius: "0px 12px" }} id="whatsAppNumberInput" placeholder="Enter number to text" />
+                                    <input type="number" className="form-control boxBgColor" value={phonenumber} onChange={onChangePhone} style={{ borderRadius: "0px 12px" }} id="whatsAppNumberInput" placeholder="Enter number to text" />
                                 </div>
                                 {/*https://api.whatsapp.com/send/?phone=${phonenumber}&text=${message}&type=phone_number&app_absent=0`}  */}
                                 <Link aria-label="Chat on WhatsApp" to={`https://web.whatsapp.com/send/?phone=${phonenumber}&text=${message}&type=phone_number&app_absent=1`} target='_blank'>

@@ -21,6 +21,7 @@ function Decryption() {
     const clearTextarea = () => {
         setText("");
         setDecryptText("");
+        setSecretText("");
     }
 
     const decryptText = () => {
@@ -39,7 +40,7 @@ function Decryption() {
             spinnerHide.style.display = "block";
 
             let secretKeyLength = secrettext.length;
-            if(secretKeyLength === 0)
+            if (secretKeyLength === 0)
                 secretKeyLength = 2;
 
 
@@ -50,7 +51,7 @@ function Decryption() {
             // converting back in char and pusing it into str variable
             for (let i = 0; i < getCharNumber.length; i++) {
                 // this is for space - origin value of space 32 but we added -2 so 30
-                if (getCharNumber[i] === 32-secretKeyLength) {
+                if (getCharNumber[i] === 32 - secretKeyLength) {
                     str += String.fromCharCode(32); // if 30 add 32 for space
                 }
                 else
@@ -66,18 +67,18 @@ function Decryption() {
     }
 
     // private Key Input
-    const secretOnChange = (e)=>{
+    const secretOnChange = (e) => {
         setSecretText(e.target.value);
     }
 
-    const showPrivateKeyInput = ()=>{        
+    const showPrivateKeyInput = () => {
         const secretKey = document.getElementById("privateKeyInputField2");
         setSecretText(secretKey.value);
 
-        if(secretKey.style.display === 'none')
-        secretKey.style.display = 'block';
+        if (secretKey.style.display === 'none')
+            secretKey.style.display = 'block';
         else
-        secretKey.style.display = 'none';
+            secretKey.style.display = 'none';
     }
 
 
@@ -104,7 +105,7 @@ function Decryption() {
                                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Secret key</label>
                                 </div>
                                 <div>
-                                    <input onChange={secretOnChange} value={secrettext} className="form-control" id="privateKeyInputField2" style={{display:"none"}} type="text" placeholder="eg: frnd" />
+                                    <input onChange={secretOnChange} value={secrettext} className="form-control" id="privateKeyInputField2" style={{ display: "none" }} type="text" placeholder="eg: frnd" />
                                 </div>
                             </div>
 

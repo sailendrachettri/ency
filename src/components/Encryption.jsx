@@ -123,12 +123,12 @@ function Encryption() {
                             <textarea className="form-control boxBgColor" id="textInputBox" rows="5" placeholder='Start typing...' onChange={methodOnChange} value={text}></textarea>
 
                             <div className="d-flex mt-2 align-items-center justify-content-center">
-                                <div className="form-check form-switch mx-2">
-                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={showPrivateKeyInput} />
-                                    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Secret key</label>
+                                <div className="form-check form-switch mx-2" >
+                                    <input className="form-check-input boxBgColor" type="checkbox" id="addSecretCheck" onClick={showPrivateKeyInput} />
+                                    <label className="form-check-label" htmlFor="addSecretCheck">Secret key</label>
                                 </div>
                                 <div>
-                                    <input onChange={secretOnChange} value={secrettext} className="form-control" id="privateKeyInputField" style={{ display: "none" }} type="text" placeholder="eg: codzz" />
+                                    <input onChange={secretOnChange} value={secrettext} className="form-control boxBgColor" id="privateKeyInputField" style={{ display: "none" }} type="text" placeholder="eg: codzz" />
                                 </div>
                             </div>
 

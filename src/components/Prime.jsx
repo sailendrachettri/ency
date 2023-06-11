@@ -49,7 +49,7 @@ function Prime() {
                 <div className="container my-4 d-flex justify-content-center">
                     <form className="row g-3">
                         <div className="col-auto">
-                            <input type="number" className="form-control" id="numberInput" placeholder="Enter a number" />
+                            <input type="number" className="form-control boxBgColor" id="numberInput" placeholder="Enter a number" />
                         </div>
                         <div className="col-auto">
                             <button type="submit" className="btn btn-outline-primary mb-3" onClick={checkPrime}>Check Prime</button>

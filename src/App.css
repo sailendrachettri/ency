@@ -6,7 +6,7 @@
 
 body {
     font-family: var(--fontFamilyVar);
-    background-color: #f9f9f9;
+    background-color: #e0dbfc;
 }
 
 .headerInfoColor {
@@ -34,7 +34,7 @@ body {
 }
 
 #displayUser {
-    color: #1470fd;
+    color: #424b58;
     font-weight: 500;
 }
 
@@ -43,17 +43,15 @@ body {
 }
 
 .boxBgColor {
-    background-color: #f7f7f7;
-    border: 2px solid #ebebeb;
-    /* top-left | top-right | bottom-right | bottom-left */
-    border-radius: 20px 20px 2px 2px;
+    background-color: #e0dbfc;
+    border: 2px solid #cecbdb;
 }
 
 .boxBgColor:focus {
     outline: none !important;
-    border-color: #719ECE;
-    box-shadow: 0 0 10px #719ECE;
-    background-color: #f7f7f7 !important;
+    border-color: #cecbdb;
+    box-shadow: 0 0 10px #cecbdb;
+    background-color: #e0dbfc;
 }
 
 /* Google icons css */
@@ -105,4 +103,8 @@ body {
     100% {
         transform: translateY(0px);
     }
+}
+
+footer {
+    background-color: #e0dbfc;
 }

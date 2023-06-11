@@ -101,11 +101,11 @@ function Decryption() {
 
                             <div className="d-flex mt-2 align-items-center justify-content-center">
                                 <div className="form-check form-switch mx-2">
-                                    <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onClick={showPrivateKeyInput} />
+                                    <input className="form-check-input boxBgColor" type="checkbox" id="flexSwitchCheckDefault" onClick={showPrivateKeyInput} />
                                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Secret key</label>
                                 </div>
                                 <div>
-                                    <input onChange={secretOnChange} value={secrettext} className="form-control" id="privateKeyInputField2" style={{ display: "none" }} type="text" placeholder="eg: frnd" />
+                                    <input onChange={secretOnChange} value={secrettext} className="form-control boxBgColor" id="privateKeyInputField2" style={{ display: "none" }} type="text" placeholder="eg: frnd" />
                                 </div>
                             </div>
 

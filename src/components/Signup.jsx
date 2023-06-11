@@ -57,7 +57,7 @@ function Signup(props) {
         <>
             <form onSubmit={validateAndSignup}>
                 <div className="justify-content-center d-flex align-items-center mt-5">
-                    <div className="container w-50 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <div className="container w-50 shadow p-3 mb-5 rounded">
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
                             <input type="text" className="form-control" id="name" name='name' onChange={onChangeMethod} placeholder="John Doe" required />

@@ -55,7 +55,7 @@ function Login(props) {
         <>
             <form onSubmit={validateAndLoggedInUser}>
                 <div className="justify-content-center d-flex align-items-center" style={{ height: "78vh" }}>
-                    <div className="container w-50 shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+                    <div className="container w-50 shadow p-3 mb-5 rounded">
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email address</label>
                             <input type="email" value={credendials.email} name='email' onChange={onChangeMethod} className="form-control" id="loginEmail" placeholder="john@email.com" required />

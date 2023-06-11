@@ -60,23 +60,23 @@ function Signup(props) {
                     <div className="container w-50 shadow p-3 mb-5 rounded">
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
-                            <input type="text" className="form-control" id="name" name='name' onChange={onChangeMethod} placeholder="John Doe" required />
+                            <input type="text" className="form-control boxBgColor" id="name" name='name' onChange={onChangeMethod} placeholder="John Doe" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email address</label>
-                            <input type="email" className="form-control" id="email" name='email' onChange={onChangeMethod} placeholder="name@example.com" required />
+                            <input type="email" className="form-control boxBgColor" id="email" name='email' onChange={onChangeMethod} placeholder="name@example.com" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="password" className="form-label">Password</label>
-                            <input type="password" className="form-control" id="password" name='password' onChange={onChangeMethod} placeholder="password" required />
+                            <input type="password" className="form-control boxBgColor" id="password" name='password' onChange={onChangeMethod} placeholder="password" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="cpassword" className="form-label">Confirm Password</label>
-                            <input type="password" className="form-control" id="cpassword" name='cpassword' onChange={onChangeMethod} placeholder="Confirm password" required />
+                            <input type="password" className="form-control boxBgColor" id="cpassword" name='cpassword' onChange={onChangeMethod} placeholder="Confirm password" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="phone" className="form-label">Phone Number</label>
-                            <input type="number" className="form-control" id="phone" name='phone' onChange={onChangeMethod} placeholder="eg: 9832XXX894" required />
+                            <input type="number" className="form-control boxBgColor" id="phone" name='phone' onChange={onChangeMethod} placeholder="eg: 9832XXX894" required />
                         </div>
                         <div className="d-grid gap-2 col-4 mx-auto">
                             <button className="btn btn-sm btn-outline-primary" type="submit">Regestered</button>

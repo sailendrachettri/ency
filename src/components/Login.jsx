@@ -58,11 +58,11 @@ function Login(props) {
                     <div className="container w-50 shadow p-3 mb-5 rounded">
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email address</label>
-                            <input type="email" value={credendials.email} name='email' onChange={onChangeMethod} className="form-control" id="loginEmail" placeholder="john@email.com" required />
+                            <input type="email" value={credendials.email} name='email' onChange={onChangeMethod} className="form-control boxBgColor" id="loginEmail" placeholder="john@email.com" required />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="password" className="form-label">Password</label>
-                            <input type="password" value={credendials.password} name='password' onChange={onChangeMethod} className="form-control" id="loginPassword" placeholder="password" />
+                            <input type="password" value={credendials.password} name='password' onChange={onChangeMethod} className="form-control boxBgColor" id="loginPassword" placeholder="password" />
                         </div>
                         <div className="d-grid gap-2 col-4 mx-auto">
                             <button className="btn btn-sm btn-outline-primary" type="submit">Login</button>

@@ -44,7 +44,7 @@ body {
 
 .boxBgColor {
     background-color: #e0dbfc;
-    border: 2px solid #cecbdb;
+    border: 1px solid #cecbdb;
 }
 
 .boxBgColor:focus {

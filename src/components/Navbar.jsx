@@ -127,19 +127,21 @@ function Navbar(props) {
                                 <p className={`nav-link ${window.location.pathname === "/about" ? "active" : ""}`} role='button' onClick={goToAbout} style={bgmode}>Developer</p>
                             </li>
                         </ul>
+
                         {/* Toggle switch - dark mode and light mode */}
                         {window.location.pathname === '/encrydecry' ? <div className="form-check form-switch">
                             <input className="form-check-input boxBgColor" type="checkbox" role="switch" onClick={darkModeToggle} id="toggleDarkMode" />
                             <label className="form-check-label" htmlFor="toggleDarkMode">{btnText}</label>
                         </div> : ""}
 
-                        <span className='mt-2 mx-3' id='displayUser'> </span>
+                        <span className='mx-3' id='displayUser'> </span>
                         {/* ! "not login" ? "than show login/signup : "else show logout and username" */}
                         {!localStorage.getItem('token') ? <form className="d-flex">
                             <Link to="/login" className='btn btn-outline-primary mx-1' role='button'>Login</Link>
                             <Link to="/signup" className='btn btn-outline-primary mx-1' role='button'>Signup</Link>
 
                         </form> : <button className='btn btn-outline-primary mx-1' onClick={logoutMethod}>Logout</button>}
+
                     </div>
                 </div>
             </nav >

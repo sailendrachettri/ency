@@ -5,7 +5,7 @@ function Encryption() {
     // state variables
     const [text, setText] = useState(""); // original text to encrypt
     const [entext, setEncryptText] = useState(""); // encrypted text
-    const [phonenumber, setPhonenumber] = useState(0); // set mobile number
+    const [phonenumber, setPhonenumber] = useState(""); // set mobile number
     const [message, setMessage] = useState(" "); // set the message to send in whatsapp
     const [secrettext, setSecretText] = useState("");
 
@@ -83,6 +83,7 @@ function Encryption() {
                 // selecting the encrypted box and extrecting text
                 let txt = document.getElementById('textDisplayBox');
                 txt.select();
+                txt.focus();
                 navigator.clipboard.writeText(str); // copy the encrypted text to clipboard
             }, 2000);
 
@@ -147,7 +148,7 @@ function Encryption() {
                             <div className="d-flex align-items-center justify-content-center mt-4">
                                 {/* <button type="button" className="btn btn-outline-primary" onClick={copyText}>Copy text</button> */}
                                 <div className="col-auto mx-2">
-                                    <input type="number" className="form-control boxBgColor" value={phonenumber} onChange={onChangePhone} style={{ borderRadius: "0px 12px" }} id="whatsAppNumberInput" placeholder="Enter number to text" />
+                                    <input type="number" className="form-control boxBgColor" onChange={onChangePhone} style={{ borderRadius: "0px 12px" }} id="whatsAppNumberInput" placeholder="Enter number to text" />
                                 </div>
                                 {/*https://api.whatsapp.com/send/?phone=${phonenumber}&text=${message}&type=phone_number&app_absent=0`}  */}
                                 <Link aria-label="Chat on WhatsApp" to={`https://web.whatsapp.com/send/?phone=${phonenumber}&text=${message}&type=phone_number&app_absent=1`} target='_blank'>

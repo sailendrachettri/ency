@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Navbar(props) {
     // global variable
@@ -54,6 +54,23 @@ function Navbar(props) {
 
     // hooks
     const navigate = useNavigate();
+
+    const gotoLogin = () => {
+        // top loading bar progress
+        props.setProgress(50);
+        setTimeout(() => {
+            props.setProgress(100);
+            navigate("/login");
+        }, 500)
+    }
+    const gotoSignup = () => {
+        // top loading bar progress
+        props.setProgress(50);
+        setTimeout(() => {
+            props.setProgress(100);
+            navigate("/signup");
+        }, 500)
+    }
 
     const goToHome = () => {
         // top loading bar progress
@@ -137,8 +154,8 @@ function Navbar(props) {
                         <span className='mx-3' id='displayUser'> </span>
                         {/* ! "not login" ? "than show login/signup : "else show logout and username" */}
                         {!localStorage.getItem('token') ? <form className="d-flex">
-                            <Link to="/login" className='btn btn-outline-primary mx-1' role='button'>Login</Link>
-                            <Link to="/signup" className='btn btn-outline-primary mx-1' role='button'>Signup</Link>
+                            <p className='btn btn-outline-primary mx-1' role='button' onClick={gotoLogin}>Login</p>
+                            <p className='btn btn-outline-primary mx-1' role='button' onClick={gotoSignup}>Signup</p>
 
                         </form> : <button className='btn btn-outline-primary mx-1' onClick={logoutMethod}>Logout</button>}
 

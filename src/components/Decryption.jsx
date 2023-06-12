@@ -62,6 +62,7 @@ function Decryption() {
             setTimeout(() => {
                 spinnerHide.style.display = "none"; // turn off spinner in {time} sec.
                 setDecryptText(str);
+                document.getElementById('textDisplayBox2').select()
             }, 2000);
         }
     }

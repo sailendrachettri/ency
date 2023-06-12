@@ -42,8 +42,8 @@ function Encryption() {
 
     const encryptText = () => {
         if (text.length === 0 || text === ' ') {
-            setText("Please enter something!");
-            setEncryptText("Output window!");
+            setText("Please enter something");
+            setEncryptText("Nothing to display");
             return
 
         } else {
@@ -102,7 +102,7 @@ function Encryption() {
 
                 <div className="row mt-4">
                     <div className="col">
-                        <h5 className='headerInfoColor paraFont'>Enter your text to encrypt</h5>
+                        <h5 className='headerInfoColor paraFont'>Text to Encrypt</h5>
                         <div className="mb-3">
                             <textarea className="form-control boxBgColor" id="textInputBox" rows="5" placeholder='Start typing...' onChange={methodOnChange} value={text}></textarea>
 

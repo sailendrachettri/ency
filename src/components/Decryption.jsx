@@ -27,8 +27,8 @@ function Decryption() {
 
     const decryptText = () => {
         if (text.length === 0 || text === ' ') {
-            setText("Please enter something!");
-            setDecryptText("Output window!");
+            setText("Please enter something");
+            setDecryptText("Nothing to display");
             return
 
         } else {
@@ -85,7 +85,7 @@ function Decryption() {
 
                 <div className="row mt-4 titleFont">
                     <div className="col">
-                        <h5 className='headerInfoColor'>Enter your text to decrypt</h5>
+                        <h5 className='headerInfoColor'>Text to Decrypt</h5>
                         <div className="mb-3">
                             <textarea className="form-control boxBgColor" id="textInputBox" rows="5" placeholder='Start typing...' onChange={methodOnChange} value={text}></textarea>
 

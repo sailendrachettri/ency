@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+const cryptoJs = require('crypto-js')
 
 function Decryption() {
     // state variables
@@ -25,43 +26,31 @@ function Decryption() {
     }
 
     const decryptText = () => {
-        let spinnerHide = document.getElementById('LoadingSpinner');
-        setDecryptText("Loading...");
-
-        let str = "";
-        let getCharNumber = [];
-
         if (text.length === 0 || text === ' ') {
             setText("Please enter something!");
             setDecryptText("Output window!");
-            spinnerHide.style.display = "none";
-        }
-        else {
+            return
+
+        } else {
+            let spinnerHide = document.getElementById('LoadingSpinner');
+            setDecryptText("Loading...");
             spinnerHide.style.display = "block";
 
-            let secretKeyLength = secrettext.length;
-            if (secretKeyLength === 0)
-                secretKeyLength = 2;
-
-
-            for (let i = 0; i < text.length; i++) {
-                getCharNumber.push(text.charCodeAt(i) - secretKeyLength); // subtracting 2 and pushing each character into array
-            }
-
-            // converting back in char and pusing it into str variable
-            for (let i = 0; i < getCharNumber.length; i++) {
-                // this is for space - origin value of space 32 but we added -2 so 30
-                if (getCharNumber[i] === 32 - secretKeyLength) {
-                    str += String.fromCharCode(32); // if 30 add 32 for space
+            let decryptedMessage = cryptoJs.AES.decrypt(text, secrettext);
+            try {
+                decryptedMessage = decryptedMessage.toString(cryptoJs.enc.Utf8)
+                // if not able to decrept the size will be zero so sending some message to user
+                if (decryptedMessage.length < 1) {
+                    decryptedMessage = "Invalid secret key to decode this message!";
                 }
-                else
-                    str += String.fromCharCode(getCharNumber[i]); // fronCharCode(97)--> 'a';
-
+            } catch {
+                decryptedMessage = "Unable to decrypt your message!"; // sending to user - if got an error while decrypting
             }
 
+            // after X second the animation will turn off the display output
             setTimeout(() => {
                 spinnerHide.style.display = "none"; // turn off spinner in {time} sec.
-                setDecryptText(str);
+                setDecryptText(decryptedMessage);
                 document.getElementById('textDisplayBox2').select()
             }, 2000);
         }

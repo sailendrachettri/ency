@@ -118,8 +118,12 @@ function Navbar(props) {
         let displayUser = document.getElementById('displayUser');
         displayUser.innerHTML = ""
 
-        localStorage.removeItem('token')
-        navigate('/login')
+        props.setProgress(50)
+        setTimeout(() => {
+            props.setProgress(100)
+            localStorage.removeItem('token')
+            navigate('/login')
+        }, 500);
 
         document.body.style.backgroundColor = white
     }

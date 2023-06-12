@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+const cryptoJs = require('crypto-js')
 
 function Encryption() {
     // state variables
@@ -40,54 +41,34 @@ function Encryption() {
     }
 
     const encryptText = () => {
-        let spinnerHide = document.getElementById('LoadingSpinner2');
-
-        setEncryptText("Loading..."); // when encryption starts - clear the output window
-
-        let str = ""; // to store encrypted message
-        let getCharNumber = []; // to store ASCAII value of each char
-
-        let secretKeyLength = secrettext.length;
-        if (secretKeyLength === 0)
-            secretKeyLength = 2;
-
-        for (let i = 0; i < text.length; i++) {
-            getCharNumber.push(text.charCodeAt(i) + secretKeyLength); // adding 2 and pushing each character into array
-        }
-
-
-        // converting back in char and pusing it into str variable
-        for (let i = 0; i < getCharNumber.length; i++) {
-            // this is for space - origin value of space 32 but we added + secretKey value so 32+secretKey
-            if (getCharNumber[i] === 32 + secretKeyLength) {
-                str += String.fromCharCode(32); // if 2+secretKey add 32 for space
-            }
-            else
-                str += String.fromCharCode(getCharNumber[i]); // fronCharCode(97)--> 'a';
-
-        }
-
         if (text.length === 0 || text === ' ') {
             setText("Please enter something!");
             setEncryptText("Output window!");
-            spinnerHide.style.display = "none";
-            // setMessage(""); 
-        }
-        else {
+            return
+
+        } else {
+            let spinnerHide = document.getElementById('LoadingSpinner2');
+            setEncryptText("Loading..."); // when encryption starts - clear the output window
             spinnerHide.style.display = "block";
 
+            let encryptedMessage = "";
+            try {
+                encryptedMessage = cryptoJs.AES.encrypt(text, secrettext);
+            } catch {
+                encryptedMessage = "Unable to encrypt your message!"
+            }
+
+            // after X seconds the message will display - animating delay
             setTimeout(() => {
                 spinnerHide.style.display = "none"; // turn off spinner in {time} sec.
-                setEncryptText(str); //str: actual encrypted text stored
+                setEncryptText(encryptedMessage);
 
                 // selecting the encrypted box and extrecting text
-                let txt = document.getElementById('textDisplayBox');
-                txt.select();
-                txt.focus();
-                navigator.clipboard.writeText(str); // copy the encrypted text to clipboard
+                document.getElementById('textDisplayBox').select()
+                navigator.clipboard.writeText(encryptedMessage); // copy the encrypted text to clipboard
             }, 2000);
 
-            setMessage(str); // setting msg as encrypted text
+            setMessage(encryptedMessage); // setting msg as encrypted text
         }
     }
 
@@ -105,6 +86,8 @@ function Encryption() {
         else
             secretKey.style.display = 'none';
     }
+
+
 
     return (
         <>

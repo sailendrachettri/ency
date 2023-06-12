@@ -124,9 +124,9 @@ function Encryption() {
                     </div>
 
                     <div className="col">
-                        <h5 className='headerInfoColor'>Your encrypted text</h5>
+                        <h5 className='headerInfoColor'>Encrypted text</h5>
                         <div className="mb-3">
-                            <textarea className="form-control boxBgColor" id="textDisplayBox" rows="5" placeholder='Encrypted text' value={entext} readOnly></textarea>
+                            <textarea className="form-control boxBgColor" id="textDisplayBox" rows="5" placeholder='Output window!' value={entext} readOnly></textarea>
 
                             <div className="d-flex align-items-center justify-content-center mt-4">
                                 {/* <button type="button" className="btn btn-outline-primary" onClick={copyText}>Copy text</button> */}

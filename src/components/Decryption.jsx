@@ -41,7 +41,7 @@ function Decryption() {
                 decryptedMessage = decryptedMessage.toString(cryptoJs.enc.Utf8)
                 // if not able to decrept the size will be zero so sending some message to user
                 if (decryptedMessage.length < 1) {
-                    decryptedMessage = "Invalid secret key to decode this message!";
+                    decryptedMessage = "Unable to decrypt your message!";
                 }
             } catch {
                 decryptedMessage = "Unable to decrypt your message!"; // sending to user - if got an error while decrypting
@@ -106,9 +106,9 @@ function Decryption() {
                         </div>
                     </div>
                     <div className="col">
-                        <h5 className='headerInfoColor'>Your decrypted text</h5>
+                        <h5 className='headerInfoColor'>Decrypted text</h5>
                         <div className="mb-3">
-                            <textarea className="form-control boxBgColor" id="textDisplayBox2" rows="5" placeholder='Decrypted text' value={detext} readOnly></textarea>
+                            <textarea className="form-control boxBgColor" id="textDisplayBox2" rows="5" placeholder='Output window!' value={detext} readOnly></textarea>
                             <div className="d-flex justify-content-center">
                                 <button type="button" className="btn btn-outline-primary mt-3" onClick={copyText}>Copy text</button>
                             </div>

@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs')
 const Users = require('../models/Users')
 const { body, validationResult } = require('express-validator')
 const fetchuser = require('../middleware/fetchuser')
-const { json } = require('react-router-dom')
 
 const JWT_SECRET = "thisIsASecretKey"
 
@@ -15,7 +14,7 @@ router.post('/signup', [
     body('name', "Enter a valid name").isLength({ min: 3 }),
     body('email', "Enter a valid email").isEmail(),
     body('password', "Password must be atleast 5 characters").isLength({ min: 5 }),
-    body('phone', "Enter a valid phone").isLength({ min: 10 }).isNumeric(),
+    body('phone', "Enter a valid phone").isNumeric(),
 
 ], async (req, res) => {
     let success = false

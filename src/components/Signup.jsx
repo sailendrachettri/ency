@@ -33,7 +33,7 @@ function Signup(props) {
         })
         const json = await response.json()
 
-        if (credendials.passowrd !== credendials.cpassword) {
+        if (credendials.password !== credendials.cpassword) {
             json.success = false;
             alert("Password and confirm passowrd should be same.");
             navigate("/signup")

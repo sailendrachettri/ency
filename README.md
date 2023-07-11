@@ -49,7 +49,7 @@ Start the Backend
 ```
 
 # Screenshots
-<p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img1.png" alt=""></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img2.png" alt=""></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img3.png" alt=""></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img4.png" alt=""></p>
+<p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img1.png" alt="Front page"></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img2.png" alt="Home page"></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img3.png" alt="Dark Home page"></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img4.png" alt="About page"></p>
 
   
 # Features

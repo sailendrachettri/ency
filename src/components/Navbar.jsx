@@ -80,14 +80,7 @@ function Navbar(props) {
             navigate("/");
         }, 500);
     }
-    const goToPrime = () => {
-        // top loading bar progress
-        props.setProgress(50);
-        setTimeout(() => {
-            props.setProgress(100);
-            navigate("/checkprime");
-        }, 500);
-    }
+
     const goToEncyDency = () => {
 
         // top loading bar progress
@@ -140,9 +133,6 @@ function Navbar(props) {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <p className={`nav-link ${window.location.pathname === "/encrydecry" ? "active" : ""}`} aria-current="page" role='button' onClick={goToEncyDency} style={bgmode}>Home</p>
-                            </li>
-                            <li className="nav-item">
-                                <p className={`nav-link ${window.location.pathname === "/checkprime" ? "active" : ""}`} role='button' onClick={goToPrime} style={bgmode}>Prime</p>
                             </li>
                             <li className="nav-item">
                                 <p className={`nav-link ${window.location.pathname === "/about" ? "active" : ""}`} role='button' onClick={goToAbout} style={bgmode}>Developer</p>

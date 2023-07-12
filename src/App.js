@@ -3,7 +3,6 @@ import Encrydecry from './components/Encrydecry';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import Prime from './components/Prime';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import About from './components/About';
@@ -29,10 +28,7 @@ function App() {
           <Route exact path="/signup" element={<Signup setProgress={setProgress} />} />
           <Route exact path="/login" element={<Login setProgress={setProgress} />} />
           <Route exact path="/about" element={<About />} />
-
           <Route exact path="/encrydecry" element={<Encrydecry />} />
-
-          <Route exact path="/checkprime" element={<Prime />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -1,29 +1,68 @@
-<h1>Encryasmi - Cryptography</h1>
-<hr><ul>
-<li>The main objective of this application is to prevent unauthorized users from being able to access, view, and understand sensitive information.</li>
-</ul><ul>
-<li>It Encrypt &amp; Decrypt the user's message and send</li>
-</ul><ul>
-<li>To prevent sensitive information fron unauthorized user.</li>
-</ul><h2>Technologies Used</h2>
-<hr><ul>
-<li>React</li>
-</ul><ul>
-<li>NodeJS</li>
-</ul><ul>
-<li>Bootstrap</li>
-</ul><ul>
-<li>Expressjs</li>
-</ul><h2>Features</h2>
-<hr><ul>
-<li>Encrypt and Decrypt messages</li>
-</ul><ul>
-<li>WhatsApp API integrated to send messages</li>
-</ul><h2>Screenshots</h2>
-<hr><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img1.png" alt=""></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img2.png" alt=""></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img3.png" alt=""></p><p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img4.png" alt=""></p><h2>Setup</h2>
-<hr><p>Clone the repo and follow the following steps</p><h5>Steps</h5><ul>
-<li>npm i</li>
-</ul><ul>
-<li>npm start</li>
-</ul><h2>Contact</h2>
-<hr><p><span style="margin-right: 30px;"></span><a href="https://www.linkedin.com/in/sailendrachettri/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" style="width: 10%;"></a><span style="margin-right: 30px;"></span><a href="https://github.com/sailendrachettri/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="width: 10%;"></a></p>
+
+# Encryasmi - Cryptography
+
+The main objective of this application is to prevent unauthorized users from being able to access, view, and understand sensitive information.
+## Tech Stack
+
+**Client:** React JS
+
+**Server:** Node JS, Express JS
+
+**Database:** Mongo DB
+  
+## Live Dome
+
+[will update soon!]
+
+## Run Locally
+
+Clone the project
+
+```bash
+  https://github.com/sailendrachettri/ency
+```
+
+Go to the project directory
+
+Install dependencies
+
+```bash
+  npm install 
+```
+
+```bash
+  cd backend
+  npm install
+```
+
+Start the Server
+
+```bash
+  npm run start
+```
+
+Start the Backend
+```bash
+  //open now terminal
+  cd backend
+  npm start
+```
+  
+# Features
+
+- Authenticaton
+- Encryption and Decryption
+- WhatsApp integration
+- Login and Signup - Hasing password
+
+# Screenshots
+<p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img1.png" alt="Front page"></p>
+<p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img2.png" alt="Home page"></p>
+<p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img3.png" alt="Dark Home page"></p>
+<p><img src="https://github.com/sailendrachettri/ency/blob/main/public/imgs/img4.png" alt="About page"></p>
+
+# Contact
+<p><span style="margin-right: 30px;"></span><a href="https://www.linkedin.com/in/sailendrachettri/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" style="width: 10%;"></a><span style="margin-right: 30px;"></span><a href="https://github.com/sailendrachettri/"><img target="_blank" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" style="width: 10%;"></a></p>
+
+## Made By
+- [@SailendraChettri](https://github.com/sailendrachettri)

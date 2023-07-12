@@ -19,7 +19,7 @@ The main objective of this application is to prevent unauthorized users from bei
 Clone the project
 
 ```bash
-  https://github.com/sailendrachettri/ency
+  git clone https://github.com/sailendrachettri/ency
 ```
 
 Go to the project directory

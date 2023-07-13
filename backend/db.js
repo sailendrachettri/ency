@@ -14,7 +14,7 @@ const MongoClient = mongodb.MongoClient;
 const uri = "mongodb+srv://sailendra9083:sailendra9083@encryasmi.6hiuqxk.mongodb.net/?retryWrites=true&w=majority"
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
-    const collection = client.db("<databaseName>").collection("<collectionName>");
+    const collection = client.db("test").collection("users");
     // perform actions on the collection object
     client.close();
 });
